@@ -1,0 +1,41 @@
+<!Doctype Html>
+<html>
+<head>
+   
+   <title>TodoList App</title>
+</head>
+
+<body>
+      <div class="container-fluid" >
+         <div class="row">
+            <div class="col-lg-4 col-lg-offset-4 ">
+               <h1>  What To Do Today</h1>
+                  <form>
+                     <input type="text" placeholder="Search..">
+                     
+                        <button type="button">Add</button><br>
+                     <input type="button" value="DELETE COMPLETED">
+                  <input type="button" value="DELETE ALL">
+               </form>
+               <div>
+                     <ul>
+                        {% for todoList in todo_items %}
+                           {% if todolist.completed %}
+                           <li>{{todolist.text}}</li>
+                           {% else %}
+                           <a href="#"><li>{{todolist.text}}</li></a>
+                           {% endif %}
+                           {% endfor %}
+                     </ul>
+                  </div>
+            </div>
+         </div>
+      </div>
+<footer>
+
+         Copyright &copy; CodeCruch 2019
+       </footer>
+      
+
+</body>
+</html>
